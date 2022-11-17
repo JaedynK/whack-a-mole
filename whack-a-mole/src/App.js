@@ -26,7 +26,7 @@ function App() {
       }
     })
   }
-
+  
   function onMoleWhacked() {
     setPoints(points + 1)
   }
@@ -34,7 +34,9 @@ function App() {
   // renders
   const denElements = dens.map((den, index) => {
     return (
-      <Mole key={`mole-${index}`} />
+      <div>
+      <Mole isMoleVisible={den.isMoleVisible} key={`mole-${index}`} points={points} setPoints = {setPoints}  />
+      </div>
     )
   })
 
